@@ -1,5 +1,5 @@
-<!-- AVF Project3 Term 0113 -->
 <!DOCTYPE html>  
+<!-- AVF Project3 Term 0113 -->
 <html lang="en">
 <head>
 
@@ -31,16 +31,16 @@
 
 		<!-- navigation (browse) list -->
 		<div data-role="content" data-theme="a">
-			<ul id="rGroups" data-role="listview" data-theme="a">
+			<ul data-role="listview" data-theme="a">
 				 <li data-role="list-divider">iOS / Android Native Feature Demos...</li>
 				<li><a href="#compass" id="voice" data-transition="slide">
 					<p class="my_icon_wrapper">
 						<h3>Compass</h3>
 					</p>
 				</a></li>
-				<li><a href="#landing" id="video" data-transition="slide">
+				<li><a href="#connection" id="video" data-transition="slide">
 					<p class="my_icon_wrapper">
-						<h3>Video Recorder</h3>
+						<h3>Connection Test</h3>
 					</p>
 				</a></li>
 				<li><a href="#landing" id="accel" data-transition="slide">
@@ -120,6 +120,8 @@
 		</div>
 	</div>
 
+
+<!-- Twitter Page -->
 	<div data-role="page" id="twit" data-theme="a" data-add-back-btn="true">
 		<div data-role="content" data-theme="a">
 			<h3>Twitter Integration</h3>
@@ -138,6 +140,8 @@
 		</div>
 	</div>
 	
+
+<!-- Flickr Page	 -->
 	<div data-role="page" id="flikr" data-theme="a" data-add-back-btn="true">
 		<div data-role="content" data-theme="a">
 			<h3>Flickr Integration</h3>
@@ -156,6 +160,8 @@
 		</div>
 	</div>
 
+
+<!-- Research1 Page -->
 	<div data-role="page" id="research1" data-theme="a" data-add-back-btn="true">
 		<div data-role="content" data-theme="a">
 			<h3>Week 1 Research</h3>
@@ -172,11 +178,33 @@
 		</div>
 	</div>
 
-	
+
+<!-- Compass Page -->
 	<div data-role="page" id="compass" data-add-back-btn="true">
 		<section id="cmain">
 
 		</section>
+		<div data-role="footer" data-position="fixed" data-id="home" data-theme="b">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#home" data-icon="home">Home</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+<!-- Connection Page -->
+	<div data-role="page" id="connection" data-add-back-btn="true">
+		<section id="connectionMain">
+			<a href="#" data-role="button" id="check">What's My Connection Type?</a>
+		</section>
+		<div data-role="footer" data-position="fixed" data-id="home" data-theme="b">
+			<div data-role="navbar">
+				<ul>
+					<li><a href="#home" data-icon="home">Home</a></li>
+				</ul>
+			</div>
+		</div>
 	</div>
 	
 	
