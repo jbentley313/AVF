@@ -76,7 +76,8 @@ $(document).on("pageshow", "#compass", function() {
 
     
     function onSuccess(heading) {
-    	var chead = heading.magneticHeading;
+    	var	fullHeading = heading.magneticHeading;
+    	var chead = Math.round(fullHeading);
     	var direction;
     	if(chead > 350 || chead <=10) {
     		direction = "North";
@@ -102,7 +103,7 @@ $(document).on("pageshow", "#compass", function() {
     	if(chead >=311 && chead <= 350) {
     		direction = "Northwest";
     	}
-       $("#cmain").html("<h3>" + chead + " degrees " + direction + "</h3>");
+       $("#cmain").html("<h1>" + chead + " degrees " + "<br/>" + direction + "</h1>");
     }
 
     // onError: Failed to get the heading
@@ -129,7 +130,7 @@ $(document).on("pageshow", "#connection", function() {
 	        Ctype[Connection.CELL_4G]  = '4G';
 	        Ctype[Connection.NONE]     = 'No network connection';
 
-	        $("#connectionMain").html("<h1>" + 'Connection type: ' + Ctype[network] + "</h1>");
+	        $("#connectionMain").html("<h3>" + 'Connection type: ' + Ctype[network] + "</h3>");
 	    
 	});
 });

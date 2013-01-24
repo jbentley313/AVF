@@ -22,5 +22,36 @@ li#data-msg {
 }
 
 
+#connectionMain {
+    background: #fff;
+    font-size: 3em;
+    width: 80% ;
+    margin-left: auto ;
+    margin-right: auto ;
+    margin-top: 30%;
+    text-align: center;
+}
+
+#check {
+    text-align: center;
+}
 
 
+#connection {
+    background: #000;
+}
+
+#cmain {
+    background: #000;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    color: #fff;
+    text-align: center;
+}
+
+#compass {
+    background:#87adfc;
+    text-align: center;
+
+}
