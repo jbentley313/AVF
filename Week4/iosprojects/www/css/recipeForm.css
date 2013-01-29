@@ -1,0 +1,57 @@
+/*Jason Bentley AVF Project3 Term 0113*/
+
+em {
+    color: #956bd6;
+    font-size: .6em;
+}
+
+#twit-data-output {
+    float: left;
+    background: #fff;
+    color: #000  ;
+    list-style: none;
+    font-size: 1.1em;
+    width: 80%;
+    font: sans-serif;
+}
+
+li#data-msg {
+    font-size: 2em;
+    background: #000;
+    color: #fff;
+}
+
+
+#connectionMain {
+    background: #fff;
+    font-size: 3em;
+    width: 80% ;
+    margin-left: auto ;
+    margin-right: auto ;
+    margin-top: 30%;
+    text-align: center;
+}
+
+#check {
+    text-align: center;
+}
+
+
+#connection {
+    background: #000;
+}
+
+#cmain {
+    background: #000;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    color: #fff;
+    text-align: center;
+}
+
+#compass {
+    background:#87adfc;
+    text-align: center;
+
+}

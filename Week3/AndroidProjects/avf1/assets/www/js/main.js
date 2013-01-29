@@ -13,7 +13,7 @@ $(document).on("pageshow", "#twit", function() {
 					"</p>" + "<br />" + "</li>");
 				};
 			}
-		)
+		);
 	});
 });
 
@@ -21,7 +21,7 @@ $(document).on("pageshow", "#twit", function() {
 //Flickr Integration	
 $(document).on("pageshow", "#flikr", function() {
 	$(function() {
-		$.getJSON("http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=f4ea255519afa6ca85e0b894ff4f029d&tags=pro+tools%2C+protools&per_page=10&page=2&format=json&nojsoncallback=1&auth_token=72157632550114110-894718a915ad2459&api_sig=12774dd1b602fd7d851f3ad8dc078ab6",
+		$.getJSON("http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=d6181cc5908b0d9e18d7ca7f30ee5d47&tags=protools%2C+pro+tools&per_page=12&page=1&format=json&nojsoncallback=1",
 			function(flikrd) {
 				console.log(flikrd);
 				if (flikrd.stat != "ok"){
@@ -38,11 +38,11 @@ $(document).on("pageshow", "#flikr", function() {
 					pUrl = "http://www.flickr.com/photos/" + tphoto.owner + "/" + tphoto.id;
 					$("#flik-data-output")
 					.append("<a" + "" + ' href="' + pUrl + '">' + '<img alt="'+ 
-  tphoto.title + '"src="' + tUrl + '"/>' + "</a>" + '<br />');
+  					tphoto.title + '"src="' + tUrl + '"/>' + "</a>");
 
 				}
 			}
-		)
+		);
 	});
 });
 
@@ -59,9 +59,9 @@ $(document).on("pageshow", "#compass", function() {
     
     function startWatch() {
 
-        var options = { frequency: 1000 };
+        var timeOptions = { frequency: 1000 };
 
-        watchID = navigator.compass.watchHeading(onSuccess, onError, options);
+        watchID = navigator.compass.watchHeading(onSuccess, onError, timeOptions);
     }
 
     // Stop watching the compass
@@ -136,5 +136,21 @@ $(document).on("pageshow", "#connection", function() {
 });
 
 
+//Device Test
 
+$(document).on("pageshow", "#devicePage", function() {
+	$("#devCheck").on("click", function () {
 
+	       $("#deviceMain").html("<h1>" + "Device Name: "     + device.name     + "<br />" + 
+	                            "Cordova Version: "  + device.cordova + "<br />" + 
+	                            "Platform: " + device.platform + "<br />" + 
+	                            "Device Model: "    + device.model     + "<br />" + 
+	                            "Device Version: "  + device.version  + "<br />" + "</h1>");
+
+	    });
+	
+
+});
+ // http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=08388e6665cb979637d57eccb95938d8&tags=protools&per_page=10&page=1&format=json
+// "http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=f4ea255519afa6ca85e0b894ff4f029d&tags=pro+tools%2C+protools&per_page=10&page=2&format=json&nojsoncallback=1&auth_token=72157632550114110-894718a915ad2459&api_sig=12774dd1b602fd7d851f3ad8dc078ab6",
+			
