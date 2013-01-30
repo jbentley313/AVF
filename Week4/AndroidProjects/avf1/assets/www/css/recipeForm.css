@@ -1,4 +1,4 @@
-/*Jason Bentley AVF Project3 Term 0113*/
+/*Jason Bentley AVF Project4 Term 0113*/
 
 em {
     color: #956bd6;
@@ -33,7 +33,7 @@ li#data-msg {
 
 #connectionMain {
     background: #fff;
-    font-size: 3em;
+    font-size: 2em;
     width: 80% ;
     margin-left: auto ;
     margin-right: auto ;
@@ -58,7 +58,7 @@ li#data-msg {
     margin-top: 50%;
     color: #fff;
     text-align: center;
-    font-size: 4em;
+    font-size: 2em;
 }
 
 #compass {

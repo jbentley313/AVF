@@ -19,6 +19,7 @@
 	<link rel="stylesheet" type="text/css" href="http://code.jquery.com/mobile/latest/jquery.mobile.min.css" /> 
 	<link rel="stylesheet" href="css/themes/RecipeKeeper.min.css" />
 	<link rel="stylesheet" href="css/recipeForm.css"/>
+	<link href="http://vjs.zencdn.net/c/video-js.css" rel="stylesheet">
 	
 	<!-- JavaScript is normally at the end of the body, except for Modernizr which enables HTML5 elements & feature detects -->
 	<script src="js/libs/modernizr.custom.min.js"></script>
@@ -33,16 +34,16 @@
 			<ul data-role="listview" data-theme="a">
 				 <li data-role="list-divider">iOS / Android Native Feature Demos...</li>
 				<li><a href="#compass" id="voice" data-transition="slide">
-						<h3>Compass</h3>
+						<h3>Compass (iOS)</h3>
 				</a></li>
 				<li><a href="#connection" data-transition="slide">
-						<h3>Connection Test</h3>
+						<h3>Connection Test (iOS and Android)</h3>
 				</a></li>
 				<li><a href="#devicePage"  data-transition="slide">
-						<h3>Device Info</h3>
+						<h3>Device Info (iOS and Android)</h3>
 				</a></li>
 				<li><a href="#geoPage"  data-transition="slide">
-						<h3>Geolocation</h3>
+						<h3>Geolocation (iOS)</h3>
 				</a></li> 
 			
 			</ul>
@@ -189,7 +190,7 @@
 		</div>
 	</div>
 
-	!-- Research1 Page -->
+	<!-- Research1 Page -->
 	<div data-role="page" id="research2" data-theme="a" data-add-back-btn="true">
 		<div data-role="content" data-theme="a">
 			<h3>Week 1 Research</h3>
@@ -271,7 +272,10 @@
 	<!-- Video Page -->
 	<div data-role="page" id="vid" data-add-back-btn="true">
 		<section id="videoSection">
-			<iframe width="560" height="315" src="http://www.youtube.com/embed/-got01CvzA0" frameborder="0" allowfullscreen></iframe>
+			<video id="vid" class="video-js vjs-default-skin" controls width="640" height="264" poster="http://video-js.zencoder.com/oceans-clip.jpg" preload="auto" data-setup="{}">
+  <source type="video/webm" src="http://dl.dropbox.com/u/10778637/androidvid.webm">
+  <source type="video/mp4" src="https://dl.dropbox.com/u/10778637/androidvid.mp4">
+</video>
 		</section>
 		<div data-role="footer" data-position="fixed" data-id="home" data-theme="b">
 			<div data-role="navbar">
@@ -304,7 +308,8 @@
 	<script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
-	<script type="text/javascript" src="js/cordova-2.3.0.js"></script>
+	<script type="text/javascript" src="cordova-2.3.0.js"></script>
+	<script src="http://vjs.zencdn.net/c/video.js"></script>
 
 
 	
