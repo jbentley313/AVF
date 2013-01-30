@@ -1,4 +1,4 @@
-// Jason Bentley AVF Project3 Term 0113	
+// Jason Bentley AVF Project34Term 0113	
 
 //Twitter Integration
 $(document).on("pageshow", "#twit", function() {
@@ -29,7 +29,6 @@ $(document).on("pageshow", "#flikr", function() {
 
 				  return;
 				 }
-				console.log(flikrd);
 				$("#fdata-msg").html("<p>Latest Flickr Pics about Avid Pro Tools!</p>");
 				
 				for (i=0, j=flikrd.photos.photo.length; i<j; i++) {
@@ -150,6 +149,28 @@ $(document).on("pageshow", "#devicePage", function() {
 	    });
 	
 
+});
+
+//
+$(document).on("pageshow", "#geoPage", function()  {
+
+    function onDeviceReady() {
+        navigator.geolocation.getCurrentPosition(onSuccess, onError);
+    }
+    onDeviceReady();
+
+    function onSuccess(position) {
+        $("#geoSection").html("<h1>" + 'Latitude: '  + position.coords.latitude  + '<br />' +
+                                       'Longitude: ' + position.coords.longitude   + '<br />' + "</h1>"); 
+                            
+    }
+
+    // onError Callback receives a PositionError object
+    //
+    function onError(error) {
+        alert('code: '    + error.code    + '\n' +
+              'message: ' + error.message + '\n');
+    }
 });
  // http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=08388e6665cb979637d57eccb95938d8&tags=protools&per_page=10&page=1&format=json
 // "http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=f4ea255519afa6ca85e0b894ff4f029d&tags=pro+tools%2C+protools&per_page=10&page=2&format=json&nojsoncallback=1&auth_token=72157632550114110-894718a915ad2459&api_sig=12774dd1b602fd7d851f3ad8dc078ab6",

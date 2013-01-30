@@ -1,4 +1,4 @@
-/*Jason Bentley AVF Project3 Term 0113*/
+/*Jason Bentley AVF Project4 Term 0113*/
 
 em {
     color: #956bd6;
@@ -6,19 +6,28 @@ em {
 }
 
 #twit-data-output {
-    float: left;
     background: #fff;
     color: #000  ;
     list-style: none;
     font-size: 1.1em;
-    width: 80%;
+    width: 90%;
     font: sans-serif;
+    margin-left: auto ;
+    margin-right: auto ;
+    text-align: left;
+}
+
+#flik-data-output {
+    float:left;
+    /*list-style: inline;*/
 }
 
 li#data-msg {
     font-size: 2em;
     background: #000;
     color: #fff;
+    margin-left: auto ;
+    margin-right: auto ;
 }
 
 
@@ -43,15 +52,52 @@ li#data-msg {
 
 #cmain {
     background: #000;
-    width: 50%;
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 50%;
     color: #fff;
     text-align: center;
+    font-size: 4em;
 }
 
 #compass {
     background:#87adfc;
     text-align: center;
+
+}
+
+#devCheck {
+    color: #000;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#deviceMain {
+    background: #87adfc;
+    color: #fff;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#devicePage {
+    background: #31312e;
+}
+
+#geoSection h1 {
+    font-size: 40px;
+    font-family: sans-serif;
+    margin: 5%;
+    border: solid;
+    background:#3D9AD1;
+    background-size: 10%;
+    padding: 10%;
+}
+
+#geoPage {
+    background: #0969A2;
+    text-shadow: none;
 
 }
