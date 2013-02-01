@@ -1,20 +1,26 @@
 // Jason Bentley AVF Project4Term 0113	
 
-//Twitter Integration
+//Twitter Data with Native Device Info Mashup
 $(document).on("pageshow", "#twit", function() {
-	$(function() {
-		$.getJSON("http://search.twitter.com/search.json?q=pro%20tools&rpp=10&include_entities=true&lang=en&result_type=recent&callback=?",
-			function(data) {
-				console.log(data);
-				$("#data-msg").html("<p>Latest Tweets about Avid Pro Tools!</p>");
-				for(i=0, j=data.results.length; i<j; i++) {
-					$("#twit-data-output")
-					.append("<li>" + "<p>" + "<img src='" + data.results[i].profile_image_url + "' /><br />" + data.results[i].text + ", <em>" + "<br />" + data.results[i].created_at + "<em>" + 
-					"</p>" + "<br />" + "</li>");
-				};
-			}
-		);
-	});
+    $(function() {
+            
+        var devId = device.model;
+        var devPlat = device.platform;
+    
+   
+ 
+        $.getJSON("http://search.twitter.com/search.json?q=" + devPlat + "&rpp=10&include_entities=true&lang=en&result_type=recent&callback=?",
+            function(data) {
+                console.log(data);
+                $("#data-msg").html("<p>Latest Tweets about Your Platform!</p>");
+                for(i=0, j=data.results.length; i<j; i++) {
+                    $("#twit-data-output")
+                    .append("<li>" + "<p>" + "<img src='" + data.results[i].profile_image_url + "' /><br />" + data.results[i].text + ", <em>" + "<br />" + data.results[i].created_at + "<em>" + 
+                    "</p>" + "<br />" + "</li>");
+                };
+            }
+        ); 
+    });  
 });
 
 
@@ -155,8 +161,8 @@ $(document).on("pageshow", "#devicePage", function() {
 $(document).on("pageshow", "#geoPage", function()  {
 
     function onDeviceReady() {
-        navigator.geolocation.getCurrentPosition(onSuccess, onError);
-        enableHighAccuracy: true;
+        navigator.geolocation.getCurrentPosition(onSuccess, onError, {enableHighAccuracy:true});
+        
     }
     onDeviceReady();
 
@@ -175,6 +181,4 @@ $(document).on("pageshow", "#geoPage", function()  {
 });
 
 
- // http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=08388e6665cb979637d57eccb95938d8&tags=protools&per_page=10&page=1&format=json
-// "http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=f4ea255519afa6ca85e0b894ff4f029d&tags=pro+tools%2C+protools&per_page=10&page=2&format=json&nojsoncallback=1&auth_token=72157632550114110-894718a915ad2459&api_sig=12774dd1b602fd7d851f3ad8dc078ab6",
-			
+ 

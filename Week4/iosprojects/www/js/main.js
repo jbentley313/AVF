@@ -1,47 +1,77 @@
-// Jason Bentley AVF Project34Term 0113	
+// Jason Bentley AVF Project4Term 0113	
 
-//Twitter Integration
+//Twitter Data with Native Device Info Mashup
 $(document).on("pageshow", "#twit", function() {
 	$(function() {
-		$.getJSON("http://search.twitter.com/search.json?q=pro%20tools&rpp=10&include_entities=true&lang=en&result_type=recent&callback=?",
-			function(data) {
-				console.log(data);
-				$("#data-msg").html("<p>Latest Tweets about Avid Pro Tools!</p>");
-				for(i=0, j=data.results.length; i<j; i++) {
-					$("#twit-data-output")
-					.append("<li>" + "<p>" + "<img src='" + data.results[i].profile_image_url + "' /><br />" + data.results[i].text + ", <em>" + "<br />" + data.results[i].created_at + "<em>" + 
-					"</p>" + "<br />" + "</li>");
-				};
-			}
-		);
-	});
+            
+        var devId = device.model;
+    
+   
+ 
+        $.getJSON("http://search.twitter.com/search.json?q=" + devId + "&rpp=10&include_entities=true&lang=en&result_type=recent&callback=?",
+            function(data) {
+                console.log(data);
+                $("#data-msg").html("<p>Latest Tweets about Your Device!</p>");
+                for(i=0, j=data.results.length; i<j; i++) {
+                    $("#twit-data-output")
+                    .append("<li>" + "<p>" + "<img src='" + data.results[i].profile_image_url + "' /><br />" + data.results[i].text + ", <em>" + "<br />" + data.results[i].created_at + "<em>" + 
+                    "</p>" + "<br />" + "</li>");
+                };
+            }
+        );
+        
+    });
+		
+	
 });
 
 
-//Flickr Integration	
+//Flickr Data and Geolocation Mashup	
 $(document).on("pageshow", "#flikr", function() {
 	$(function() {
-		$.getJSON("http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=d6181cc5908b0d9e18d7ca7f30ee5d47&tags=protools%2C+pro+tools&per_page=12&page=1&format=json&nojsoncallback=1",
-			function(flikrd) {
-				console.log(flikrd);
-				if (flikrd.stat != "ok"){
-					alert("Flickr didn't work!");
+        function onDeviceReady() {
+        navigator.geolocation.getCurrentPosition(onSuccess, onError);
+    }
+    onDeviceReady();
 
-				  return;
-				 }
-				$("#fdata-msg").html("<p>Latest Flickr Pics about Avid Pro Tools!</p>");
-				
-				for (i=0, j=flikrd.photos.photo.length; i<j; i++) {
-					tphoto = flikrd.photos.photo[i];
-					tUrl = "http://farm" + tphoto.farm + ".static.flickr.com/" + tphoto.server + "/" + tphoto.id + "_" + tphoto.secret + "_" + "m.jpg";
-					pUrl = "http://www.flickr.com/photos/" + tphoto.owner + "/" + tphoto.id;
-					$("#flik-data-output")
-					.append("<a" + "" + ' href="' + pUrl + '">' + '<img alt="'+ 
-  					tphoto.title + '"src="' + tUrl + '"/>' + "</a>");
+    function onSuccess(position) {
+        var lat = position.coords.latitude;
+        var lon = position.coords.longitude;
+        $("#flik-data-output").append("<h1>" + 'Latitude: '  + lat  + '<br />' +
+                                       'Longitude: ' + lon   + '<br />' + "</h1>"); 
+        $.getJSON("http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=d6181cc5908b0d9e18d7ca7f30ee5d47&tags=recording&text=recording+studios&lat=" + lat + "&lon=" + lon + "&per_page=24&page=2&format=json&nojsoncallback=1",
+            function(flikrd) {
+                console.log(flikrd);
+                if (flikrd.stat != "ok"){
+                    alert("Flickr didn't work!");
 
-				}
-			}
-		);
+                  return;
+                 }
+                $("#fdata-msg").html("<p>Recording Studio Pics around Your Location!</p>");
+                
+                for (i=0, j=flikrd.photos.photo.length; i<j; i++) {
+                    tphoto = flikrd.photos.photo[i];
+                    tUrl = "http://farm" + tphoto.farm + ".static.flickr.com/" + tphoto.server + "/" + tphoto.id + "_" + tphoto.secret + "_" + "m.jpg";
+                    pUrl = "http://www.flickr.com/photos/" + tphoto.owner + "/" + tphoto.id;
+                    $("#flik-data-output")
+                    .append("<a" + "" + ' href="' + pUrl + '">' + '<img alt="'+ 
+                    tphoto.title + '"src="' + tUrl + '"/>' + "</a>");
+
+                }
+            }
+        );
+
+               
+    }
+    
+
+        // onError Callback receives a PositionError object
+        //
+        function onError(error) {
+            alert('code: '    + error.code    + '\n' +
+                  'message: ' + error.message + '\n');
+        }
+		
 	});
 });
 
@@ -132,6 +162,7 @@ $(document).on("pageshow", "#connection", function() {
 	        $("#connectionMain").html("<h3>" + 'Connection type: ' + Ctype[network] + "</h3>");
 	    
 	});
+
 });
 
 
@@ -146,7 +177,7 @@ $(document).on("pageshow", "#devicePage", function() {
 	                            "Device Model: "    + device.model     + "<br />" + 
 	                            "Device Version: "  + device.version  + "<br />" + "</h1>");
 
-	    });
+	});
 	
 
 });
@@ -171,7 +202,12 @@ $(document).on("pageshow", "#geoPage", function()  {
         alert('code: '    + error.code    + '\n' +
               'message: ' + error.message + '\n');
     }
+    
 });
- // http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=08388e6665cb979637d57eccb95938d8&tags=protools&per_page=10&page=1&format=json
-// "http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=f4ea255519afa6ca85e0b894ff4f029d&tags=pro+tools%2C+protools&per_page=10&page=2&format=json&nojsoncallback=1&auth_token=72157632550114110-894718a915ad2459&api_sig=12774dd1b602fd7d851f3ad8dc078ab6",
+
+$(document).on("pageshow", "#mash", function()  {
+   onDeviceReady();
+
+
+});
 			

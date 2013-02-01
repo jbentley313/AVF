@@ -18,8 +18,14 @@ em {
 }
 
 #flik-data-output {
-    float:left;
-    /*list-style: inline;*/
+    float:left;   
+}
+
+#flik-data-output a {
+    
+    margin: 2%;
+
+
 }
 
 li#data-msg {
@@ -31,19 +37,22 @@ li#data-msg {
 }
 
 
-#connectionMain {
+#connectionMain  {
     background: #fff;
     font-size: 3em;
     width: 80% ;
-    margin-left: auto ;
-    margin-right: auto ;
+    
+    margin-left: 10% ;
     margin-top: 30%;
     text-align: center;
 }
 
-#check {
+/*#check {
     text-align: center;
-}
+    border:2px solid;
+    border-radius:25px;
+
+}*/
 
 
 #connection {
@@ -67,30 +76,36 @@ li#data-msg {
 
 }
 
-#devCheck {
+/*#devCheck {
     color: #000;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
-}
+}*/
+
+
 
 #deviceMain {
+    margin-top: 10%;
     background: #87adfc;
     color: #fff;
-    width: 75%;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
 }
+
 
 #devicePage {
     background: #31312e;
 }
 
 #geoSection h1 {
+    animation: myfirst 5s;
     font-size: 40px;
-    font-family: sans-serif;
+    font-weight: bold;
     margin: 5%;
-    border: solid;
+    border:2px solid;
+    border-radius:25px;
     background:#3D9AD1;
     background-size: 10%;
     padding: 10%;
@@ -100,4 +115,37 @@ li#data-msg {
     background: #0969A2;
     text-shadow: none;
 
+}
+
+#research1 h4 {
+    border:1px solid;
+    padding:4px;
+    background: black;
+}
+
+#research1 h5 {
+    padding:4px;
+    
+}
+
+#research2 h4 {
+    border:1px solid;
+    padding:4px;
+    background: black;
+}
+
+#research2 h5 {
+    
+    padding:4px;
+}
+
+#research3 h4 {
+    border:1px solid;
+    padding:4px;
+    background: black;
+}
+
+#research3 h5 {
+    
+    padding:4px;
 }
