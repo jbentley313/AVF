@@ -64,10 +64,12 @@ li#data-msg {
     width: 80%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 50%;
+    margin-top: 10%;
     color: #fff;
     text-align: center;
     font-size: 4em;
+    /*border:1px solid;*/
+    border-radius:25px;
 }
 
 #compass {
@@ -148,4 +150,14 @@ li#data-msg {
 #research3 h5 {
     
     padding:4px;
+}
+
+#my_video_1 {
+    margin: 0 
+    auto; 
+    width: 90%;
+}
+
+#vidPlayPage {
+    background:black;
 }
