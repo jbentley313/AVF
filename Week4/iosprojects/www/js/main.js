@@ -12,7 +12,7 @@ $(document).on("pageshow", "#twit", function() {
         $.getJSON("http://search.twitter.com/search.json?q=" + devId + "&rpp=10&include_entities=true&lang=en&result_type=recent&callback=?",
             function(data) {
                 console.log(data);
-                                $("#data-msg").html("<p>Latest Tweets about Your Device!</p>");
+                $("#data-msg").html("<p>Latest Tweets about Your Device!</p>");
 
                 for(i=0, j=data.results.length; i<j; i++) {
                     $("#twit-data-output")

@@ -41,7 +41,6 @@ li#data-msg {
     background: #fff;
     font-size: 3em;
     width: 80% ;
-    
     margin-left: 10% ;
     margin-top: 30%;
     text-align: center;
@@ -68,7 +67,6 @@ li#data-msg {
     color: #fff;
     text-align: center;
     font-size: 4em;
-    /*border:1px solid;*/
     border-radius:25px;
 }
 
@@ -102,7 +100,6 @@ li#data-msg {
 }
 
 #geoSection h1 {
-    animation: myfirst 5s;
     font-size: 40px;
     font-weight: bold;
     margin: 5%;
@@ -153,8 +150,7 @@ li#data-msg {
 }
 
 #my_video_1 {
-    margin: 0 
-    auto; 
+    margin: 0 auto; 
     width: 90%;
 }
 

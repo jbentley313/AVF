@@ -3,16 +3,16 @@
 //Twitter Data with Native Device Info Mashup
 $(document).on("pageshow", "#twit", function() {
     $(function() {
-            
+        $("#twit-data-output").empty();    
         var devId = device.model;
-        var devPlat = device.platform;
+        // var devPlat = device.platform;
     
    
  
-        $.getJSON("http://search.twitter.com/search.json?q=" + devPlat + "&rpp=10&include_entities=true&lang=en&result_type=recent&callback=?",
+        $.getJSON("http://search.twitter.com/search.json?q=" + devId + "&rpp=10&include_entities=true&lang=en&result_type=recent&callback=?",
             function(data) {
                 console.log(data);
-                $("#data-msg").html("<p>Latest Tweets about Your Platform!</p>");
+                $("#data-msg").html("<p>Latest Tweets about Your Device!</p>");
                 for(i=0, j=data.results.length; i<j; i++) {
                     $("#twit-data-output")
                     .append("<li>" + "<p>" + "<img src='" + data.results[i].profile_image_url + "' /><br />" + data.results[i].text + ", <em>" + "<br />" + data.results[i].created_at + "<em>" + 
@@ -26,6 +26,7 @@ $(document).on("pageshow", "#twit", function() {
 
 //Flickr Integration	
 $(document).on("pageshow", "#flikr", function() {
+    $("#flik-data-output").empty();
 	$(function() {
 		$.getJSON("http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=d6181cc5908b0d9e18d7ca7f30ee5d47&tags=protools%2C+pro+tools&per_page=12&page=1&format=json&nojsoncallback=1",
 			function(flikrd) {
